@@ -14,7 +14,7 @@ cd ngrok
 
 NGROK_DOMAIN="你的域名"
 
-###### 自己生成证书部分(如网站有证书这步可以跳过) ########
+###### 自己生成证书部分(如网站有证书这步可以跳过) 如果你的golang版本是1.15及其以上可能需要使用SANs生成证书或者设置客户端环境变量GODEBUG=x509ignoreCN=0 ########
 openssl genrsa -out base.key 2048
 
 openssl req -new -x509 -nodes -key base.key -days 10000 -subj "/CN=$NGROK_DOMAIN" -out base.pem
