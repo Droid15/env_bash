@@ -37,3 +37,6 @@ make release-server release-client
 #GOOS=windows GOARCH=amd64 make release-client
 #GOOS=linux GOARCH=arm make release-client
 
+###### 常见问题 ######
+#按上面步骤自己生成的证书可能遇到certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0 问题，这个是go版本导致的
+#这时候可以自己去申请正规的网站ssl证书或者设置环境变量 GODEBUG=x509ignoreCN=0, eg: linux 这样设置 export GODEBUG=x509ignoreCN=0
